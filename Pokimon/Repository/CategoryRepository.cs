@@ -21,7 +21,7 @@ namespace Pokimon.Repository
 
         public async Task<bool> CreateCategory(Category category)
         {
-           _context.Add(category);
+           await _context.AddAsync(category);
            return await Save();
         }
 

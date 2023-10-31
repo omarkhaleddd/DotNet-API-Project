@@ -16,6 +16,7 @@ namespace Pokimon.Data
         public DbSet<PokimonCategory> PokimonCategories { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Reviewer> Reviewers { get; set; }
+        public DbSet<User> users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PokimonCategory>()

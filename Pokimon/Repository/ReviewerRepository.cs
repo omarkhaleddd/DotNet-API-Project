@@ -16,7 +16,7 @@ namespace Pokimon.Repository
 
         public async Task<bool> CreateReviewer(Reviewer reviewer)
         {
-            _context.Add(reviewer);
+            await _context.AddAsync(reviewer);
             return await Save();
         }
 

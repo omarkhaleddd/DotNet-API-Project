@@ -21,7 +21,7 @@ namespace Pokimon.Repository
 
         public async Task<bool> CreateCountry(Country country)
         {
-            _context.Add(country);
+            await _context.AddAsync(country);
             return await Save();
         }
 
