@@ -15,7 +15,7 @@ namespace Pokimon.Repository
 
         public async Task<bool> CreatePokemon(Pokemon pokemon)
         {
-            _context.Add(pokemon);
+            await _context.AddAsync(pokemon);
             return await Save();
 
         }

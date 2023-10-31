@@ -40,7 +40,7 @@ namespace Pokimon.Repository
         }
         public async Task<bool> CreateOwner(Owner owner)
         {
-            _context.Add(owner);
+            await _context.AddAsync(owner);
             return await Save();
         }
 

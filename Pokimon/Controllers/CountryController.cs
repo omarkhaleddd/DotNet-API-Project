@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pokimon.Dto;
 using Pokimon.Interfaces;
@@ -21,7 +22,7 @@ namespace Pokimon.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet , Authorize(Roles = "User , Admin")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Country>))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> GetCountries()
@@ -33,7 +34,7 @@ namespace Pokimon.Controllers
             }
             return Ok(countries);
         }
-        [HttpGet("{countryId}")]
+        [HttpGet("{countryId}") , Authorize(Roles ="User , Admin" )]
         [ProducesResponseType(200, Type = typeof(Country))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> GetCountry(int countryId)
@@ -50,7 +51,7 @@ namespace Pokimon.Controllers
             }
             return Ok(country);
         }
-        [HttpGet("owners/{ownerId}")]
+        [HttpGet("owners/{ownerId}") , Authorize(Roles = "User , Admin")]
         [ProducesResponseType(200, Type = typeof(Country))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> GetCountryByOwner(int ownerId)
@@ -62,7 +63,7 @@ namespace Pokimon.Controllers
             }
             return Ok(country);
         }
-        [HttpPost]
+        [HttpPost , Authorize(Roles ="Admin")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         public async Task<IActionResult> CreateCountry([FromBody] CountryDto country)
@@ -92,7 +93,7 @@ namespace Pokimon.Controllers
             }
             return Ok(country);
         }
-        [HttpDelete("{itemId}")]
+        [HttpDelete("{itemId}") , Authorize(Roles ="Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
@@ -114,7 +115,7 @@ namespace Pokimon.Controllers
             }
             return NoContent();
         }
-        [HttpPut("{itemId}")]
+        [HttpPut("{itemId}") , Authorize(Roles ="Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
