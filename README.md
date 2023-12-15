@@ -1,4 +1,8 @@
-# Pokimon
+# Pokimon CRUD API using Dotnet
+
+practicing CRUD apis using c# 
+
+-- Authentication , JWT , Swagger
 
 ## clone the repo
 
