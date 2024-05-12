@@ -1,19 +1,12 @@
 # Pokimon CRUD API using Dotnet
 
-practicing CRUD apis using c# 
+## Overview
+This project demonstrates the implementation of CRUD (Create, Read, Update, Delete) APIs using C# with JWT (JSON Web Tokens) authentication and Swagger for API documentation.
 
--- Authentication , JWT , Swagger
+## Technologies Used
+- C#
+- ASP.NET Core
+- Entity Framework Core
+- JWT Authentication
+- Swagger/OpenAPI
 
-## clone the repo
-
-git clone https://github.com/your-username/your-project.git
-
-## cd to the folder
-
-cd your-project
-
-## to install dependencies 
-
-dotnet restore
-
-dotnet build
